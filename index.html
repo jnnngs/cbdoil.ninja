@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBD Oil Ninja - CBD Dosage Calculator</title>
+    <meta name="description" content="Calculate the right CBD dosage for your needs with our CBD Dosage Calculator. Learn how CBD may help with anxiety and related studies.">
+    <meta name="keywords" content="CBD, CBD oil, dosage calculator, anxiety, health studies">
+    <link rel="canonical" href="https://www.cbdoil.ninja/cbd-dosage-calculator">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="cbdoil.ninja - CBD Dosage Calculator">
+    <meta property="og:description" content="Calculate the right CBD dosage for your needs with our CBD Dosage Calculator. Learn how CBD may help with anxiety and related studies.">
+    <meta property="og:image" content="https://www.cbdoil.ninja/images/og-image.jpg">
+    <meta property="og:url" content="https://www.cbdoil.ninja">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for branding and color scheme */
+        .brand-logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+        }
+        .brand-title {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 10px;
+            color: #454545; /* Dark gray text */
+        }
+        .error-message {
+            color: red;
+        }
+        body {
+            background-color: #50A060; /* Light green background */
+            color: #454545; /* Dark gray text */
+        }
+        .container {
+            background-color: #ffffff; /* White container background */
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .btn-primary {
+            background-color: #50A060; /* Light green button background */
+            border-color: #50A060;
+            color: #ffffff; /* White text on button */
+        }
+        .btn-primary:hover {
+            background-color: #454545; /* Dark gray button background on hover */
+            border-color: #454545;
+        }
+        .menu {
+            background-color: #454545; /* Dark gray menu background */
+            padding: 10px;
+        }
+        .menu a {
+            color: #ffffff; /* White menu text */
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .how-does-cbd-help {
+            margin-top: 30px;
+        }
+        /* Improve menu design */
+        .menu-selected {
+            background-color: #50A060;
+        }
+        /* Add styles for header and footer */
+        header {
+            background-color: #454545;
+            padding: 10px;
+        }
+        footer {
+            background-color: #454545;
+            padding: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ninja Logo" class="brand-logo">
+        <h1 class="brand-title">CBD Dosage Calculator</h1>
+        <div class="menu">
+            <a href="#" class="menu-selected">Home</a>
+            <a href="#how-does-cbd-help">How Does CBD Help?</a>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <form>
+            <div class="form-group">
+                <label for="cbdAmount">Total CBD in the bottle (mg)</label>
+                <input type="number" class="form-control" id="cbdAmount" required pattern="[0-9]+">
+                <span class="error-message" id="cbdAmountError"></span>
+            </div>
+            <div class="form-group">
+                <label for="bottleSize">Bottle size (ml)</label>
+                <input type="number" class="form-control" id="bottleSize" required pattern="[0-9]+">
+                <span class="error-message" id="bottleSizeError"></span>
+            </div>
+            <div class="form-group">
+                <label for="desiredDose">Desired daily dose (mg)</label>
+                <input type="number" class="form-control" id="desiredDose" required pattern="[0-9]+">
+                <span class="error-message" id="desiredDoseError"></span>
+            </div>
+            <div class="form-group">
+                <label for="userExperience">CBD Usage Experience</label>
+                <select class="form-control" id="userExperience">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="experienced">Experienced</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="validateAndCalculate()">Calculate Dosage</button>
+        </form>
+        <div class="mt-3">
+            <h3>Calculation Details:</h3>
+            <p id="calculationDetails"></p>
+            <h3>Recommended Dosage:</h3>
+            <p id="recommendedDosage"></p>
+            <h3>Weekly Plan:</h3>
+            <p id="weeklyPlan"></p>
+            <h3>How Many Drops to Take:</h3>
+            <p id="dropsToTake"></p>
+        </div>
+    </div>
+    <div class="how-does-cbd-help" id="how-does-cbd-help">
+        <h2>How Does CBD Help?</h2>
+        <p>
+            CBD oil is thought to help with anxiety in several ways:
+        </p>
+        <ul>
+            <li>Serotonin Receptor Modulation: CBD is believed to interact with serotonin receptors in the brain, which can help regulate mood and behavior. Serotonin is often termed the “feel-good” neurotransmitter because it contributes to feelings of well-being and happiness.</li>
+            <li>Endocannabinoid System (ECS): CBD interacts with the endocannabinoid system, which plays a crucial role in regulating various physiological processes, including mood, stress, and anxiety.</li>
+            <li>Neural Regeneration: Chronic anxiety may damage neural circuits in the brain, and there's evidence to suggest that CBD can facilitate the regeneration of neurons in certain areas.</li>
+            <li>Anti-Inflammatory Effects: CBD has anti-inflammatory properties, and since inflammation can lead to mood disorders like anxiety and depression, reducing inflammation may help alleviate anxiety symptoms.</li>
+            <li>Anxiolytic Effects: Some research suggests that CBD may possess anxiolytic effects that reduce anxiety, although the exact mechanisms are still under investigation.</li>
+        </ul>
+        <p>
+            Remember that individual responses to CBD can vary greatly, and not everyone may experience relief from anxiety with its use. The research on CBD is still in its early stages, and there isn't a consensus among scientists and doctors about its effectiveness and safety in the long term. Always consult a healthcare provider before using CBD or any other supplement, especially if you are pregnant, nursing, have a medical condition, or are taking any medications.
+        </p>
+        <p>
+            Here are some references to health studies:
+        </p>
+        <ul>
+            <li>Reference 1: <a href="#" target="_blank">Study Title 1</a></li>
+            <li>Reference 2: <a href="#" target="_blank">Study Title 2</a></li>
+            <li>Reference 3: <a href="#" target="_blank">Study Title 3</a></li>
+        </ul>
+    </div>
+    <footer>
+        &copy; 2023 cbdoil.ninja. All rights reserved.
+    </footer>
+
+    <script>
+        function validateAndCalculate() {
+            // Reset previous error messages
+            document.getElementById('cbdAmountError').textContent = '';
+            document.getElementById('bottleSizeError').textContent = '';
+            document.getElementById('desiredDoseError').textContent = '';
+
+            // Get user inputs
+            const cbdAmount = parseFloat(document.getElementById('cbdAmount').value);
+            const bottleSize = parseFloat(document.getElementById('bottleSize').value);
+            const desiredDose = parseFloat(document.getElementById('desiredDose').value);
+            const userExperience = document.getElementById('userExperience').value;
+
+            // Validate inputs
+            let isValid = true;
+            if (isNaN(cbdAmount) || cbdAmount <= 0) {
+                isValid = false;
+                document.getElementById('cbdAmountError').textContent = 'Enter a valid CBD amount.';
+            }
+            if (isNaN(bottleSize) || bottleSize <= 0) {
+                isValid = false;
+                document.getElementById('bottleSizeError').textContent = 'Enter a valid bottle size.';
+            }
+            if (isNaN(desiredDose) || desiredDose <= 0) {
+                isValid = false;
+                document.getElementById('desiredDoseError').textContent = 'Enter a valid desired dose.';
+            }
+
+            // If all inputs are valid, calculate dosage
+            if (isValid) {
+                calculateDosage(cbdAmount, bottleSize, desiredDose, userExperience);
+            }
+        }
+
+        function calculateDosage(cbdAmount, bottleSize, desiredDose, userExperience) {
+            // Calculate daily dosage
+            const dailyDosage = (desiredDose / cbdAmount) * bottleSize;
+
+            // Calculate weekly plan (example: 7 days a week)
+            const weeklyPlan = dailyDosage * 7;
+
+            // Calculate drops to take (adjust the number of drops per ml as needed)
+            const dropsPerML = 20; // Example: 20 drops per ml
+            const dropsToTake = dailyDosage * dropsPerML;
+
+            // Display calculation details, recommended dosage, weekly plan, and drops to take
+            const calculationDetails = `Total CBD in Bottle: ${cbdAmount} mg | Bottle Size: ${bottleSize} ml | Desired Daily Dose: ${desiredDose} mg | CBD Usage Experience: ${userExperience}`;
+            document.getElementById('calculationDetails').textContent = calculationDetails;
+            document.getElementById('recommendedDosage').textContent = `Recommended Daily Dosage: ${dailyDosage.toFixed(2)} ml`;
+            document.getElementById('weeklyPlan').textContent = `Weekly Plan: ${weeklyPlan.toFixed(2)} ml`;
+
+            // Check if dropsToTake is a valid number before using toFixed
+            if (!isNaN(dropsToTake)) {
+                document.getElementById('dropsToTake').textContent = `How Many Drops to Take: ${dropsToTake.toFixed(2)} drops`;
+            } else {
+                document.getElementById('dropsToTake').textContent = `How Many Drops to Take: Invalid`;
+            }
+        }
+    </script>
+</body>
+</html>
