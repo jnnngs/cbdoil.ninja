@@ -11,7 +11,7 @@ node (agent){
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         dir("app") {
-            sh 'docker image build --no-cache -t gilsteadprivatehire .'
+            sh 'docker image build --no-cache -t cbdoilninja .'
         }
     }
 
@@ -20,9 +20,9 @@ node (agent){
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        sh 'docker tag gilsteadprivatehire:latest reg.jnnn.gs/gilsteadprivatehire:latest'
+        sh 'docker tag cbdoilninja:latest reg.jnnn.gs/cbdoilninja:latest'
         sh 'docker login --username=sysad --password=sysad reg.jnnn.gs'
-        sh 'docker push reg.jnnn.gs/gilsteadprivatehire:latest' 
+        sh 'docker push reg.jnnn.gs/cbdoilninja:latest' 
     }
 
     stage('Test HTTP Request') {

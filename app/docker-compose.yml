@@ -2,8 +2,8 @@ version: "3.9"
 
 services:
   app:
-    container_name: gilsteadprivatehire
-    image: reg.jnnn.gs/gilsteadprivatehire:latest
+    container_name: cbdoilninja
+    image: reg.jnnn.gs/cbdoilninja:latest
     restart: unless-stopped
     ports:
-      - "8282:80"
+      - "8585:80"
