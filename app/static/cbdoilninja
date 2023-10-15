@@ -38,12 +38,12 @@ server {
 	#
 	# include snippets/snakeoil.conf;
 
-	root /var/www/html/gilsteadtaxis/;
+	root /var/www/html/cbdoilninja/;
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm;
 
-	server_name gilsteadtaxis.com www.gilsteadtaxis.com;
+	server_name cbdoil.ninja www.cbdoil.ninja;
 
 	location / {
 		# First attempt to serve request as file, then
