@@ -1269,3 +1269,21 @@ footer {
     .fade-animation {
       transition: opacity 0.3s ease-in-out;
   }
+  #userExperience, #userExperience:focus {
+    color: black !important;
+    background-color: white !important;
+}
+
+#userExperience.form-control {
+  color: black !important;
+  background-color: white !important;
+}
+.section-header .section-subtitle {
+  margin-top: 15px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+strong {
+  font-weight: bold !important;
+}

@@ -18,7 +18,7 @@
 	<script src="https://kit.fontawesome.com/8a2e3d414d.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <title>Gilstead Private Hire</title>
+    <title>CBD Oil Ninja - CBD Dosage Calculator</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,10 +44,22 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#calculator">Dosage Calculator</a>
-              </li>                                 
+              </li>      
               <li class="nav-item">
-                <a class="nav-link" href="#pricing">Pricing</a>
-              </li>     
+                <a class="nav-link" href="#howmuch">How Much to Take?</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="#evolution ">Evolution of Cannabidiol (CBD)</a>
+              </li>      
+              <li class="nav-item">
+                <a class="nav-link" href="#usecases ">Typical Use Cases</a>
+              </li>                        
+              <li class="nav-item">
+                <a class="nav-link" href="#howdoesithelp">How does it help?</a>
+              </li>    
+              <li class="nav-item">
+                <a class="nav-link" href="#advice">General Advice</a>
+              </li>   
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
               </li> 
@@ -84,11 +96,11 @@
     <!-- Header Section End --> 
 
 
-     <!-- Services Section Start -->
+     <!-- calculator Section Start -->
      <section id="calculator" class="section">
       <div class="container">
           <div class="row justify-content-center">
-              <div class="col-md-6 col-sm-12"> <!-- Adjust the column size as needed -->
+              <div class="col-md-8 col-sm-12"> <!-- Adjust the column size as needed -->
                   <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
                       <div class="icon">
                           <i class="fas fa-cannabis"></i>
@@ -110,29 +122,40 @@
                         <label for="desiredDose">Desired daily dose (mg)</label>
                         <input value="10" type="number" class="form-control" id="desiredDose" required pattern="[0-9]+" style="color: black;">
                         <span class="error-message" id="desiredDoseError"></span>
-                    </div>
-                    <div class="form-group" style="color: black;">
-                      <label for="userExperience">CBD Usage Experience</label>
-                      <select class="form-control" id="userExperience" style="color: black;">
-                        <option selected value="beginner">Beginner</option>
-                          <option value="intermediate">Intermediate</option>
-                          <option value="experienced">Experienced</option>
-                      </select>
+                    </div>  
+                    <div style="color: black;" class="form-group" >
+                      <label>CBD Usage Experience:</label>
+                      <div>
+                          <input type="radio" id="beginner" name="userExperience" value="beginner" checked>
+                          <label for="beginner">Beginner</label>
+                      
+                          <input type="radio" id="intermediate" name="userExperience" value="intermediate">
+                          <label for="intermediate">Intermediate</label>
+                      
+                          <input type="radio" id="experienced" name="userExperience" value="experienced">
+                          <label for="experienced">Experienced</label>
+                      </div>
                   </div>
-                  
+               
                   
                   <button type="button" class="btn btn-primary" onclick="validateAndCalculate()">Calculate Dosage</button>
 
                 </form>
                 <div class="output-container hidden" id="calculationOutput">
                     <h3>Calculation Details:</h3>
-                    <p id="calculationDetails"></p>
+                    <p style="font-size: 16px;" id="calculationDetails"></p>
                     <h3>Recommended Dosage:</h3>
-                    <p id="recommendedDosage"></p>
+                    <p style="font-size: 16px;" id="recommendedDosage"></p>
                     <h3>Weekly Plan:</h3>
-                    <p id="weeklyPlan"></p>
+                    <p style="font-size: 16px;" id="weeklyPlan"></p>
                     <h3>How Many Drops to Take:</h3>
-                    <p id="dropsToTake"></p>
+                    <p style="font-size: 16px;" id="dropsToTake"></p>
+                    <h3>Detailed Breakdown:</h3>
+                    <p style="font-size: 16px;" id="detailedBreakdown"></p>
+                    <h3>Advice Based on Experience:</h3>
+                    <p style="font-size: 16px;" id="experienceAdvice"></p>
+                    <h3 id="dosageWarningheader" >Warning:</h3>
+                    <p style="font-size: 16px;" id="dosageWarning" style="color: red;"></p>
                 </div>
             </div>
             </div>
@@ -141,26 +164,234 @@
         </div>
       </div>
     </section>
-    <!-- Services Section End -->
+    <!-- calculator Section End -->
 
-    <!-- Start Pricing Table Section -->
-    <div id="pricing" class="section pricing-section">
+    <!-- Start howmuch Table Section -->
+    <div id="howmuch" class="section howmuch-section">
       <div class="container">
 
         <div class="section-header">          
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">How does <span>CBD</span> Help?</h2>
+          <h4 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">How Much to <span>Take</span> Help?</h4>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-            CBD oil is thought to help in several ways:
+          <p  class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <strong style="font-size: 16px;">The recommended daily dose of CBD varies based on several factors, including the individual's body weight, the condition being treated, the individual's tolerance, and the concentration of CBD in the product. Always consult with a healthcare professional when determining the right dosage.</strong>
         </p>
-        <ul class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-            <li>Serotonin Receptor Modulation: CBD is believed to interact with serotonin receptors in the brain, which can help regulate mood and behavior. Serotonin is often termed the “feel-good” neurotransmitter because it contributes to feelings of well-being and happiness.</li>
-            <li>Endocannabinoid System (ECS): CBD interacts with the endocannabinoid system, which plays a crucial role in regulating various physiological processes, including mood, stress, and anxiety.</li>
-            <li>Neural Regeneration: Chronic anxiety may damage neural circuits in the brain, and there's evidence to suggest that CBD can facilitate the regeneration of neurons in certain areas.</li>
-            <li>Anti-Inflammatory Effects: CBD has anti-inflammatory properties, and since inflammation can lead to mood disorders like anxiety and depression, reducing inflammation may help alleviate anxiety symptoms.</li>
-            <li>Anxiolytic Effects: Some research suggests that CBD may possess anxiolytic effects that reduce anxiety, although the exact mechanisms are still under investigation.</li>
-        </ul>
-        <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+        <ol style="font-size: 16px;" class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <li><strong>Start Low and Go Slow:</strong> It's a common recommendation to start with a low dose and gradually increase until you find the right amount that works for you. This is because everyone's body reacts differently to CBD.</li>
+            <li><strong>General Health and Wellness:</strong> For general health and wellness, many people start with a daily dose of 5-20 mg.</li>
+            <li><strong>General Anxiety:</strong> Some people might take smaller doses daily (like 10-50 mg) and then adjust based on personal experience and symptoms.</li>
+            <li><strong>Other Forms of Anxiety:</strong> There are limited studies on conditions like post-traumatic stress disorder (PTSD) or anxiety-induced insomnia. However, some individuals report relief at doses as low as 25 mg.</li>
+            <li><strong>Chronic Pain:</strong> Some studies have used doses of 20-1,500 mg per day for chronic pain.</li>
+            <li><strong>Sleep Disorders:</strong> Between 40-160 mg might be used to address sleep disorders.</li>
+            <li><strong>Epilepsy:</strong> Clinical trials have prescribed 200-300 mg daily.</li>
+            <li><strong>Glaucoma:</strong> Some sources suggest not exceeding 40 mg daily to increase intraocular pressure.</li>
+        </ol>
+        <p class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+          Lastly, it's crucial to consider it as part of a comprehensive treatment plan and not a standalone solution. Always consult with a healthcare professional or therapist familiar with CBD before starting or adjusting a regimen.
+        </p>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End howdoesithelp Table Section -->
+
+     <!-- Evolution  Section Start -->
+     <section id="evolution" class="section">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-sm-12"> <!-- Adjust the column size as needed -->
+                  <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                      <div class="icon">
+                          <i class="fas fa-cannabis"></i>
+                      </div>
+                      <h4 style="font-size: 20px;">The Evolution of Cannabidiol (CBD): From Stigma to Mainstream Acceptance</h4>
+                      <div class="text-left" style="font-size: 18px;" class="container mt-8">
+                        <br/>
+                        <h4 class="text-left" style="font-size: 18px;">Context:</h4>
+                        <p class="text-left" style="font-size: 16px;">Cannabidiol (CBD), a compound derived from the cannabis plant, has a history that is as controversial as it is intriguing. Cannabis, recognized for its therapeutic properties in ancient civilizations, later faced a wave of prohibition in the 20th century due to concerns surrounding its psychoactive properties (mainly attributed to THC). In recent decades, CBD has gained significant attention for its potential health benefits, distinguishing itself from the more infamous THC.</p>
+                        <br/>
+                        <h4 class="text-left" style="font-size: 18px;">Timeline of Events:</h4>
+                        <ol class="text-left" style="font-size: 16px;">
+                            <li>
+                                <strong>2737 BCE:</strong> Ancient Chinese texts, including the Shennong Bencaojing, mention the therapeutic use of cannabis for ailments such as rheumatism and malaria (Russo, 2007).
+                            </li>
+                            <li>
+                                <strong>1830s:</strong> Irish physician William O'Shaughnessy introduces cannabis to Western medicine after observing its use in India. He documented its potential as an analgesic and muscle relaxant (O'Shaughnessy, 1843).
+                            </li>
+                            <li>
+                                <strong>1940:</strong> CBD is isolated and identified by Roger Adams and his team at the University of Illinois (Adams et al., 1940). However, its structure and configuration remained unclear until 1963.
+                            </li>
+                            <li>
+                                <strong>1963-1964:</strong> Dr. Raphael Mechoulam at the Hebrew University of Jerusalem elucidates the stereochemistry of CBD and, shortly after, THC, distinguishing the non-psychoactive properties of CBD from the psychoactive properties of THC (Mechoulam & Shvo, 1963).
+                            </li>
+                            <li>
+                                <strong>1970:</strong> The Controlled Substances Act in the United States classifies cannabis, including CBD, as a Schedule I substance, making its research and use highly restricted (Drug Enforcement Administration, 1970).
+                            </li>
+                            <li>
+                                <strong>1980s:</strong> Dr. Mechoulam's further research uncovers potential therapeutic benefits of CBD for epilepsy (Cunha et al., 1980).
+                            </li>
+                            <li>
+                                <strong>1990s:</strong> Discovery of the endocannabinoid system sheds light on how cannabinoids, including CBD, interact with the human body (Devane et al., 1992).
+                            </li>
+                            <li>
+                                <strong>2013:</strong> The story of Charlotte Figi, a young girl with Dravet Syndrome, gains public attention. The use of a high-CBD cannabis strain significantly reduced her seizures, sparking a surge in interest and acceptance of CBD for therapeutic purposes (Maa & Figi, 2014).
+                            </li>
+                            <li>
+                                <strong>2018:</strong> The US Farm Bill is signed into law, effectively legalizing the production of hemp (a form of cannabis with low THC content) and the extraction of CBD from it. This marked a significant shift in the public and legal perception of CBD (U.S. Congress, 2018).
+                            </li>
+                            <li>
+                                <strong>2020:</strong> Multiple clinical trials and reviews indicate CBD's potential for treating conditions like anxiety, chronic pain, and certain types of epilepsy. The FDA approves Epidiolex, a CBD-based drug, for the treatment of seizures associated with two rare forms of epilepsy (FDA, 2020).
+                            </li>
+                        </ol>
+                        <br/>
+                        <h4 style="font-size: 18px;">Present Day:</h4>
+                        <p style="font-size: 16px;">CBD products, ranging from oils to edibles, have found their way into mainstream markets around the world. With ongoing research and an evolving regulatory landscape, CBD's role in healthcare and wellness continues to expand.</p>
+                        <br/>
+                        <h4 style="font-size: 18px;">References:</h4>
+                        <ol style="font-size: 16px;">
+                            <li>Adams, R. et al. (1940). Structure of Cannabidiol. <em>Journal of the American Chemical Society</em>, 62(1), 196-200.</li>
+                            <li>Cunha, J.M., et al. (1980). Chronic administration of cannabidiol to healthy volunteers and epileptic patients. <em>Pharmacology</em>, 21(3), 175-185.</li>
+                            <li>Devane, W.A., et al. (1992). Isolation and structure of a brain constituent that binds to the cannabinoid receptor. <em>Science</em>, 258(5090), 1946-1949.</li>
+                            <li>Drug Enforcement Administration. (1970). Controlled Substances Act.</li>
+                            <li>FDA. (2020). FDA approves first drug comprised of an active ingredient derived from marijuana to treat rare, severe forms of epilepsy. U.S. Food & Drug Administration.</li>
+                            <li>Maa, E., & Figi, P. (2014). The case for medical marijuana in epilepsy. <em>Epilepsia</em>, 55(6), 783-786.</li>
+                            <li>Mechoulam, R., & Shvo, Y. (1963). Hashish—I: The structure of Cannabidiol. <em>Tetrahedron</em>, 19(12), 2073-2078.</li>
+                            <li>O'Shaughnessy, W.B. (1843). On the preparations of the Indian hemp, or Gunjah. <em>Provincial Medical Journal and Retrospect of the Medical Sciences</em>, 5(123), 363.</li>
+                            <li>Russo, E. (2007). History of cannabis and its preparations in saga, science, and sobriquet. <em>Chemistry & Biodiversity</em>, 4(8), 1614-1648.</li>
+                            <li>U.S. Congress. (2018). Agriculture Improvement Act of 2018.</li>
+                        </ol>
+
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Evolution  Section End -->
+
+     <!-- UseCases  Section Start -->
+     <section id="usecases" class="section">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-sm-12"> <!-- Adjust the column size as needed -->
+                  <div style="font-size: 16px;" class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                      <div class="icon">
+                          <i class="fas fa-cannabis"></i>
+                      </div>
+                      <h4 style="font-size: 20px;">Typical Use Cases</h4>
+                      <br/>
+                      <h2>CBD Oil:</h2>
+                      <p><strong>Typical Use Cases:</strong></p>
+                      <ul>
+                          <li>Sublingual use (under the tongue)</li>
+                          <li>Added to food or drinks</li>
+                          <li>Used topically for skincare or localized pain</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Pros:</strong></p>
+                      <ul>
+                          <li>Versatility: Can be consumed in multiple ways.</li>
+                          <li>Precise Dosing: Easier to measure exact dosages with droppers.</li>
+                          <li>Rapid Absorption: When used sublingually, it can be absorbed rapidly.</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Cons:</strong></p>
+                      <ul>
+                          <li>Taste: Some people find the natural taste of CBD oil to be unpalatable.</li>
+                          <li>Variable Absorption: Bioavailability can vary based on how it's consumed.</li>
+                      </ul>
+                      <br/>
+                      <h2>CBD Gummies:</h2>
+                      <p><strong>Typical Use Cases:</strong></p>
+                      <ul>
+                          <li>Easy and discrete consumption</li>
+                          <li>Consistent dosing</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Pros:</strong></p>
+                      <ul>
+                          <li>Taste and Convenience: Often flavorful and easier for some to consume.</li>
+                          <li>Consistent Dosing: Each gummy has a fixed amount of CBD.</li>
+                          <li>Longer-lasting: Digestive system processing can lead to prolonged effects.</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Cons:</strong></p>
+                      <ul>
+                          <li>Delayed Onset: Takes longer to feel effects due to digestion.</li>
+                          <li>Lower Bioavailability: Less CBD is absorbed compared to other methods.</li>
+                          <li>Added Ingredients: Some gummies contain sugars or other additives.</li>
+                      </ul>
+                      <br/>
+                      <h2>Vaping CBD:</h2>
+                      <p><strong>Typical Use Cases:</strong></p>
+                      <ul>
+                          <li>Immediate relief</li>
+                          <li>Respiratory route</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Pros:</strong></p>
+                      <ul>
+                          <li>Rapid Onset: Effects can be felt almost immediately.</li>
+                          <li>Higher Bioavailability: More CBD is absorbed via the lungs compared to other methods.</li>
+                          <li>Adjustable Dosing: Users can take as many or as few puffs as needed.</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Cons:</strong></p>
+                      <ul>
+                          <li>Potential Risks: Vaping anything can have potential respiratory risks.</li>
+                          <li>Device Maintenance: Requires a vaporizer or e-cigarette device.</li>
+                          <li>Shorter Duration: Effects might not last as long as edibles.</li>
+                      </ul>
+                      <br/>
+                      <h2>Combining Types:</h2>
+                      <p>There might be scenarios where combining different types of CBD products can be beneficial. For example:</p>
+                      <ul>
+                          <li>Using CBD oil for a consistent baseline throughout the day and vaping for immediate relief during sudden episodes of anxiety.</li>
+                          <li>Combining gummies for a longer-lasting effect with topical CBD oil for localized pain or skin issues.</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Pros:</strong></p>
+                      <ul>
+                          <li>Tailored Effects: Combining allows for a more customized CBD experience.</li>
+                          <li>Prolonged Relief: Combining can lead to both immediate and long-lasting relief.</li>
+                      </ul>
+                      <br/>
+                      <p><strong>Cons:</strong></p>
+                      <ul>
+                          <li>Dosage Management: Users need to be cautious not to overconsume.</li>
+                          <li>Cost: Buying multiple product types can be more expensive.</li>
+                      </ul>
+                  
+                      <p>Remember, everyone's body reacts differently to CBD, so what works for one person might not work for another. It's essential to start with a lower dose and consult with a healthcare professional before starting or combining CBD products.</p>
+                  
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Evolution  Section End -->
+
+    <!-- Start howdoesithelp Table Section -->
+    <div id="howdoesithelp" class="section howdoesithelp-section">
+      <div class="container">
+
+        <div class="section-header">          
+          <h4 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">How does <span>CBD</span> Help?</h4>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p  class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <strong style="font-size: 16px;">CBD oil is thought to help in several ways:</strong>
+        </p>
+        <ol style="font-size: 16px;" class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <li><strong>Serotonin Receptor Modulation:</strong> CBD is believed to interact with serotonin receptors in the brain, which can help regulate mood and behavior. Serotonin is often termed the “feel-good” neurotransmitter because it contributes to feelings of well-being and happiness.</li>
+            <li><strong>Endocannabinoid System (ECS):</strong> CBD interacts with the endocannabinoid system, which plays a crucial role in regulating various physiological processes, including mood, stress, and anxiety.</li>
+            <li><strong>Neural Regeneration:</strong> Chronic anxiety may damage neural circuits in the brain, and there's evidence to suggest that CBD can facilitate the regeneration of neurons in certain areas.</li>
+            <li><strong>Anti-Inflammatory Effects:</strong> CBD has anti-inflammatory properties, and since inflammation can lead to mood disorders like anxiety and depression, reducing inflammation may help alleviate anxiety symptoms.</li>
+            <li><strong>Anxiolytic Effects:</strong> Some research suggests that CBD may possess anxiolytic effects that reduce anxiety, although the exact mechanisms are still under investigation.</li>
+        </ol>
+        <p class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
             Remember that individual responses to CBD can vary greatly, and not everyone may experience relief from anxiety with its use. The research on CBD is still in its early stages, and there isn't a consensus among scientists and doctors about its effectiveness and safety in the long term. Always consult a healthcare provider before using CBD or any other supplement, especially if you are pregnant, nursing, have a medical condition, or are taking any medications.
         </p>
         </div>
@@ -168,7 +399,66 @@
         </div>
       </div>
     </div>
-    <!-- End Pricing Table Section -->
+    <!-- End howdoesithelp Table Section -->
+
+    <!-- Start advice Table Section -->
+    <div id="advice" class="section advice-section">
+      <div class="container">
+
+        <div class="section-header">          
+          <h4 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">General <span>CBD</span> Advice</h4>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p  class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+            <strong style="font-size: 16px;">Advice for Someone Starting Out with CBD Products:</strong>
+        </p>
+
+        <ol style="font-size: 16px;" class="text-left section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
+        <li>
+            <strong>Consult with a Healthcare Professional:</strong> Before starting any CBD regimen, consult with a healthcare professional, especially if you have any pre-existing medical conditions or are taking medications. They can provide personalized guidance and ensure there are no potential interactions with your current treatments.
+        </li>
+        <li>
+            <strong>Understand CBD and Its Variants:</strong> CBD comes in various forms, including oils, tinctures, capsules, edibles, topicals, and more. Each form has its unique properties and absorption rates. Understand the differences and choose the one that suits your needs and preferences.
+        </li>
+        <li>
+            <strong>Start with a Low Dosage:</strong> If you're new to CBD, start with a low dosage and gradually increase it as needed. Everyone's body reacts differently, so it's essential to find the right dosage for your specific needs. You can typically find dosage recommendations on product labels or consult with a healthcare professional.
+        </li>
+        <li>
+            <strong>Read Product Labels:</strong> When purchasing CBD products, read the labels carefully. Look for information on the CBD content, dosage, ingredients, and any third-party testing results. Reputable brands provide this information to ensure transparency and product quality.
+        </li>
+        <li>
+            <strong>Choose High-Quality Products:</strong> Opt for CBD products from reputable brands that use high-quality, organically grown hemp and follow good manufacturing practices (GMP). Research the brand's reputation and read customer reviews.
+        </li>
+        <li>
+            <strong>Be Patient:</strong> CBD's effects may take time to become noticeable. It's not uncommon for people to use CBD for a few weeks before experiencing significant benefits. Be patient and consistent with your usage.
+        </li>
+        <li>
+            <strong>Stay Informed:</strong> Keep up to date with the latest research on CBD and its potential benefits. The field of CBD research is continually evolving, and new findings may provide insights into its uses and effects.
+        </li>
+        <li>
+            <strong>Be Mindful of Side Effects:</strong> While CBD is generally considered safe, some people may experience side effects such as dizziness, dry mouth, changes in appetite, or diarrhea. If you experience adverse effects, consider adjusting your dosage or discontinuing use.
+        </li>
+        <li>
+            <strong>Know the Legal Status:</strong> Understand the legal status of CBD in your region or country. Laws regarding CBD can vary significantly, so it's essential to stay compliant with local regulations.
+        </li>
+        <li>
+            <strong>Avoid Unsubstantiated Claims:</strong> Be cautious of products or companies that make grandiose health claims about CBD. While CBD has shown promise in various studies, it's not a miracle cure for all ailments. Be skeptical of claims that seem too good to be true.
+        </li>
+        <li>
+            <strong>Consider Full-Spectrum vs. Isolate:</strong> CBD products can be full-spectrum (containing other cannabinoids and compounds from the hemp plant) or CBD isolate (pure CBD). Some people prefer one over the other, so consider your preferences and potential benefits.
+        </li>
+        <li>
+            <strong>Keep a Journal:</strong> To track the effects of CBD, consider keeping a journal. Note the dosage, time of day, and any changes in your symptoms or well-being. This can help you adjust your usage for optimal results.
+        </li>
+    </ol>
+    <p>
+        Remember that while CBD shows promise for various conditions, it's not a replacement for medical treatment when needed. Always consult with a healthcare professional for serious health concerns or conditions. CBD is a complementary wellness tool that can be integrated into a healthy lifestyle.
+    </p>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End advice Table Section -->
 
     <!-- Counter Section Start -->
     <div class="counters section" data-stellar-background-ratio="0.5">
@@ -320,175 +610,152 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>     
     <script src="js/main.js"></script>
+    
     <script>
-      let animationInProgress = false;
 
-      function toggleCalculationOutput() {
-      // Check if an animation is already in progress
-      if (animationInProgress) {
-        return;
-      }
-
-      // Get the calculation output element
-      const calculationOutput = document.getElementById('calculationOutput');
-
-      // Check if the calculation output is currently visible
-      const isVisible = !calculationOutput.classList.contains('hidden');
-
-      // Toggle the visibility of the calculation output with animation
-      if (isVisible) {
-        animationInProgress = true;
-        fadeOutText(function () {
-          calculationOutput.classList.add('hidden');
-          animationInProgress = false;
-        });
-      } else {
-        // If it's hidden, show it and calculate the dosage
-        showCalculationOutput();
-        calculateDosage();
-      }
+    function updateCalculationText(cbdAmount, bottleSize, desiredDose, userExperience) {
+        const calculationText = `Total CBD in Bottle: ${cbdAmount} mg | Bottle Size: ${bottleSize} ml | Desired Daily Dose: ${desiredDose} mg | CBD Usage Experience: ${userExperience}`;
+        const calculationDetails = document.getElementById('calculationDetails');
+        calculationDetails.textContent = calculationText;
     }
 
-    function fadeOutText(callback) {
-    const calculationDetails = document.getElementById('calculationDetails');
-    calculationDetails.classList.add('fade-animation'); // Add the fade-animation class
-    calculationDetails.style.opacity = '0';
+    function validateAndCalculate() {
+        // Reset any previous error messages
+        document.getElementById('cbdAmountError').textContent = '';
+        document.getElementById('bottleSizeError').textContent = '';
+        document.getElementById('desiredDoseError').textContent = '';
 
-    setTimeout(callback, 300);
-}
+        // Get user inputs
+        const cbdAmount = parseFloat(document.getElementById('cbdAmount').value);
+        const bottleSize = parseFloat(document.getElementById('bottleSize').value);
+        const desiredDose = parseFloat(document.getElementById('desiredDose').value);
+        const userExperience = document.querySelector('input[name="userExperience"]:checked').value;
 
-function fadeInText() {
-    const calculationDetails = document.getElementById('calculationDetails');
-    calculationDetails.classList.add('fade-animation'); // Add the fade-animation class
-    calculationDetails.style.opacity = '1';
-}
+        // Validate inputs
+        let isValid = true;
+        if (isNaN(cbdAmount) || cbdAmount <= 0) {
+            isValid = false;
+            document.getElementById('cbdAmountError').textContent = 'Enter a valid CBD amount.';
+        }
+        if (isNaN(bottleSize) || bottleSize <= 0) {
+            isValid = false;
+            document.getElementById('bottleSizeError').textContent = 'Enter a valid bottle size.';
+        }
+        if (isNaN(desiredDose) || desiredDose <= 0) {
+            isValid = false;
+            document.getElementById('desiredDoseError').textContent = 'Enter a valid desired dose.';
+        }
 
-
-// Add this code inside your script tag, after including jQuery
-
-// Helper function to dissolve and re-display the text
-function dissolveAndReDisplayText() {
-    // Get the calculation details element
-    const calculationDetails = $('#calculationDetails');
-
-    // Check if the calculation output is currently visible
-    const isVisible = !calculationDetails.hasClass('hidden');
-
-    // Toggle the visibility with animation
-    if (isVisible) {
-        // If visible, dissolve the text and hide it
-        calculationDetails.fadeOut(300, function () {
-            calculationDetails.addClass('hidden').fadeIn(300);
-        });
-    } else {
-        // If hidden, show it and calculate the dosage
-        showCalculationOutput();
-        calculateDosage();
-    }
-}
-
-// Modify your existing toggleCalculationOutput function
-function toggleCalculationOutput() {
-    dissolveAndReDisplayText();
-}
-
-// Update the showCalculationOutput function to use jQuery
-function showCalculationOutput() {
-    const calculationOutput = $('#calculationOutput');
-    calculationOutput.removeClass('hidden').hide().fadeIn(300);
-}
-
-
-function fadeOutText(callback) {
-    // Get the calculation details element
-    const calculationDetails = document.getElementById('calculationDetails');
-    calculationDetails.style.opacity = '0';
-
-    // Use setTimeout to ensure the text is completely faded out before callback
-    setTimeout(callback, 300);
-}
-
-function fadeInText() {
-    // Get the calculation details element
-    const calculationDetails = document.getElementById('calculationDetails');
-    calculationDetails.style.opacity = '1';
-}
-
-function updateCalculationText(cbdAmount, bottleSize, desiredDose, userExperience) {
-    // Update the calculation details text
-    const calculationText = `Total CBD in Bottle: ${cbdAmount} mg | Bottle Size: ${bottleSize} ml | Desired Daily Dose: ${desiredDose} mg | CBD Usage Experience: ${userExperience}`;
-    const calculationDetails = document.getElementById('calculationDetails');
-    calculationDetails.textContent = calculationText;
-}
-
-function validateAndCalculate() {
-    // Reset any previous error messages
-    document.getElementById('cbdAmountError').textContent = '';
-    document.getElementById('bottleSizeError').textContent = '';
-    document.getElementById('desiredDoseError').textContent = '';
-
-    // Get user inputs
-    const cbdAmount = parseFloat(document.getElementById('cbdAmount').value);
-    const bottleSize = parseFloat(document.getElementById('bottleSize').value);
-    const desiredDose = parseFloat(document.getElementById('desiredDose').value);
-    const userExperience = document.getElementById('userExperience').value;
-
-    // Validate inputs
-    let isValid = true;
-    if (isNaN(cbdAmount) || cbdAmount <= 0) {
-        isValid = false;
-        document.getElementById('cbdAmountError').textContent = 'Enter a valid CBD amount.';
-    }
-    if (isNaN(bottleSize) || bottleSize <= 0) {
-        isValid = false;
-        document.getElementById('bottleSizeError').textContent = 'Enter a valid bottle size.';
-    }
-    if (isNaN(desiredDose) || desiredDose <= 0) {
-        isValid = false;
-        document.getElementById('desiredDoseError').textContent = 'Enter a valid desired dose.';
+        // If all inputs are valid, calculate and display the dosage
+        if (isValid) {
+            updateCalculationText(cbdAmount, bottleSize, desiredDose, userExperience);
+            const dosageInfo = calculateDosage(cbdAmount, bottleSize, desiredDose, userExperience);
+            displayDosage(dosageInfo, cbdAmount, bottleSize, userExperience);// Pass the cbdAmount and bottleSize here
+        }
     }
 
-    // If all inputs are valid, calculate and display the dosage
-    if (isValid) {
-        const dosageInfo = calculateDosage(cbdAmount, bottleSize, desiredDose, userExperience);
-        displayDosage(dosageInfo);
-    }
-}
 
-
-function calculateDosage(cbdAmount, bottleSize, desiredDose, userExperience) {
-    // Calculate the recommended dosage
-    const recommendedDosage = cbdAmount / bottleSize * desiredDose;
-
+    function calculateDosage(cbdAmount, bottleSize, desiredDose) {
     // Calculate the weekly plan (assuming 7 days in a week)
-    const weeklyPlan = recommendedDosage * 7;
+    const weeklyPlan = desiredDose * 7;
 
-    // Calculate how many drops to take (adjust as needed based on your specific calculation)
-    // For example, if you have a known drop concentration, you can use that to calculate drops
-    const dropConcentration = 5; // Change this value to your actual drop concentration
-    const dropsToTake = recommendedDosage / dropConcentration;
+    // Calculate how many drops to take
+    const dropConcentration = cbdAmount / bottleSize; // mg per ml
+    const dropsPerMl = 20; // Assuming 20 drops per ml
+    const dropsToTake = desiredDose / (dropConcentration / dropsPerMl);
 
-    // Create an object to hold all the calculated values
-    const dosageInfo = {
-        recommendedDosage,
-        weeklyPlan,
-        dropsToTake,
+    // Return the calculated values
+    return {
+        recommendedDosage: desiredDose,
+        weeklyPlan: weeklyPlan,
+        dropsToTake: Math.round(dropsToTake) // Rounding off to nearest whole number for clarity
     };
-
-    return dosageInfo;
 }
 
 
-function displayDosage(dosageInfo) {
+function displayDosage(dosageInfo, cbdAmount, bottleSize, userExperience) {
+    // Calculate the concentration of CBD per ml
+    const concentrationPerMl = cbdAmount / bottleSize;
+
+    // Assuming there are 20 drops in 1 ml
+    const concentrationPerDrop = concentrationPerMl / 20;
+
+    // Calculate the number of drops needed for the desired dose
+    const dropsNeeded = dosageInfo.recommendedDosage / concentrationPerDrop;
+
     // Display the calculated values in the HTML
     const recommendedDosageElement = document.getElementById('recommendedDosage');
-    recommendedDosageElement.textContent = `Recommended Dosage: ${dosageInfo.recommendedDosage} mg`;
+    recommendedDosageElement.innerHTML = `<strong style="font-size: 16px;">${dosageInfo.recommendedDosage} mg</strong>`;
+
 
     const weeklyPlanElement = document.getElementById('weeklyPlan');
-    weeklyPlanElement.textContent = `Weekly Plan: ${dosageInfo.weeklyPlan} mg`;
+    weeklyPlanElement.innerHTML = `<strong style="font-size: 16px;">${dosageInfo.weeklyPlan} mg</strong>`;
 
     const dropsToTakeElement = document.getElementById('dropsToTake');
-    dropsToTakeElement.textContent = `How Many Drops to Take: ${dosageInfo.dropsToTake} drops`;
+    dropsToTakeElement.innerHTML = `<strong style="font-size: 16px;">${Math.round(dropsNeeded)} drops</strong>`;
+
+    const detailedBreakdownElement = document.getElementById('detailedBreakdown');
+    detailedBreakdownElement.innerHTML = `
+        First, we need to determine the concentration of CBD per drop.<br>
+        Given that the total CBD in the bottle is ${cbdAmount} mg and the bottle size is ${bottleSize} ml, the concentration is:<br>
+        ${cbdAmount} mg / ${bottleSize} ml = ${concentrationPerMl.toFixed(2)} mg/ml<br>
+        Assuming there are 20 drops in 1 ml, the concentration per drop is:<br>
+        ${concentrationPerMl.toFixed(2)} mg/ml / 20 drops/ml = ${concentrationPerDrop.toFixed(2)} mg/drop<br>
+        To get a dose of ${dosageInfo.recommendedDosage} mg, the number of drops needed is:<br>
+        ${dosageInfo.recommendedDosage} mg / ${concentrationPerDrop.toFixed(2)} mg/drop = ${dropsNeeded.toFixed(2)} drops.
+    `;
+
+    const experienceAdviceElement = document.getElementById('experienceAdvice');
+    switch(userExperience) {
+        case 'beginner':
+            experienceAdviceElement.textContent = "As a beginner, it's recommended to start with a lower dosage and monitor how your body reacts. If you feel comfortable, you can gradually increase the dosage over time.";
+            break;
+        case 'intermediate':
+            experienceAdviceElement.textContent = "With some experience, you might be familiar with how CBD affects you. However, always be cautious when increasing your dosage and do so gradually.";
+            break;
+        case 'experienced':
+            experienceAdviceElement.textContent = "As an experienced user, you likely have a good understanding of how CBD affects you. Remember, it's always a good idea to consult with a healthcare professional if you're considering a significant dosage increase.";
+            break;
+        default:
+            experienceAdviceElement.textContent = "Always start with a lower dosage and monitor how your body reacts. Adjust as necessary and consult with a healthcare professional if unsure.";
+            break;
+    }
+
+    const dosageWarningElement = document.getElementById('dosageWarning');
+    const dosageWarningheaderElement= document.getElementById('dosageWarningheader');
+    dosageWarningElement.textContent = ''; // Reset the warning
+    dosageWarningElement.style.display = 'none'; // Hide the warning by default
+    dosageWarningheaderElement.style.display = 'none'; // Hide the warning by default
+
+    // Set some arbitrary limits based on user experience
+    const beginnerLimit = 20; // mg
+    const intermediateLimit = 50; // mg
+    const experiencedLimit = 100; // mg
+
+    switch(userExperience) {
+        case 'beginner':
+            if (dosageInfo.recommendedDosage > beginnerLimit) {
+                dosageWarningElement.textContent = "Warning: The calculated dosage seems high for a beginner. Please consult with a healthcare professional.";
+                dosageWarningElement.style.display = 'block'; // Show the warning
+                dosageWarningheaderElement.style.display = 'block'; // Show the warning
+            }
+            break;
+        case 'intermediate':
+            if (dosageInfo.recommendedDosage > intermediateLimit) {
+                dosageWarningElement.textContent = "Warning: The calculated dosage seems high for someone with intermediate experience. Please consult with a healthcare professional.";
+                dosageWarningElement.style.display = 'block'; // Show the warning
+                dosageWarningheaderElement.style.display = 'block'; // Show the warning
+            }
+            break;
+        case 'experienced':
+            if (dosageInfo.recommendedDosage > experiencedLimit) {
+                dosageWarningElement.textContent = "Warning: Even as an experienced user, this dosage seems high. Please consult with a healthcare professional.";
+                dosageWarningElement.style.display = 'block'; // Show the warning
+                dosageWarningheaderElement.style.display = 'block'; // Show the warning
+            }
+            break;
+    }
+
 
     // Show the output container
     showCalculationOutput();
@@ -496,17 +763,20 @@ function displayDosage(dosageInfo) {
 
 
 
-function showCalculationOutput() {
-    // Get the calculation output element
-    const calculationOutput = document.getElementById('calculationOutput');
 
-    // Remove the 'hidden' class to make it visible
-    calculationOutput.classList.remove('hidden');
+    function showCalculationOutput() {
+        // Get the calculation output element
+        const calculationOutput = document.getElementById('calculationOutput');
 
-    // Apply animation by changing the opacity gradually
-    calculationOutput.style.opacity = '1';
-}
+        // Remove the 'hidden' class to make it visible
+        calculationOutput.classList.remove('hidden');
 
-  </script>
+        // Apply animation by changing the opacity gradually
+        calculationOutput.style.opacity = '1';
+    }
+
+    </script>
+
+
   </body>
 </html>
